@@ -10,7 +10,6 @@ El proyecto fue desarrollado como trabajo de la asignatura de Lenguajes y
 Autómatas / Compiladores, y sirve como ejemplo práctico de cómo se construye
 un compilador por fases.
 
----
 
 ## Características del lenguaje soportado
 
@@ -102,70 +101,7 @@ Durante la ejecución se imprime en consola la salida de cada fase: la tabla de
 tokens, los mensajes de los análisis, el código RPN, los cuádruplos (sin
 optimizar y optimizados) y el código objeto final.
 
----
 
-## Estructura del proyecto
-
-```
-Compilador2-main/
-└── MiCompi/                     Proyecto NetBeans (Apache Ant)
-    ├── build.xml                Script de construcción de Ant
-    ├── manifest.mf
-    ├── nbproject/               Configuración del proyecto NetBeans
-    └── src/micompi/
-        ├── MiCompi.java              Punto de entrada (orquesta las fases)
-        ├── lexico.java              Fase 1: análisis léxico
-        ├── nodo.java                Token de la lista enlazada
-        ├── sintactico.java          Fase 2: análisis sintáctico (AST)
-        ├── semantico.java           Fase 3: análisis semántico
-        ├── GeneradorRPN.java        Fase 4: código intermedio RPN
-        ├── ProcesadorRPN.java       Fase 5: cuádruplos
-        ├── Cuadruplo.java           Estructura de un cuádruplo
-        ├── Optimizador.java         Fase 6: optimización
-        ├── GeneradorCodigoObjeto.java  Fase 7: código objeto
-        ├── codigo.txt               Programa de entrada de ejemplo
-        └── NodoAST/                 Nodos del AST
-```
-
----
-
-## Requisitos
-
-- **JDK 17 o superior** (el código usa *switch expressions*, disponibles a
-  partir de Java 14).
-- Opcional: **NetBeans** (el proyecto ya incluye la configuración de NetBeans
-  con Ant) o cualquier IDE / línea de comandos con `javac`.
-
----
-
-## Cómo compilar y ejecutar
-
-### Opción A — NetBeans
-
-1. Abrir el proyecto `MiCompi` en NetBeans.
-2. Editar el programa de entrada en `src/micompi/codigo.txt`.
-3. Ejecutar el proyecto (F6). La salida de todas las fases aparece en la consola.
-
-### Opción B — Línea de comandos
-
-Desde la carpeta `MiCompi/`:
-
-```bash
-# Compilar
-javac -d build/classes $(find src -name "*.java")
-
-# Ejecutar (usa src/micompi/codigo.txt por defecto)
-java -cp build/classes micompi.MiCompi
-
-# O indicar otro archivo fuente como argumento
-java -cp build/classes micompi.MiCompi ruta/a/mi_programa.txt
-```
-
-> Nota: la ruta del archivo fuente se construye de forma portable con
-> `File.separator`, por lo que el compilador funciona igual en Windows, Linux y
-> macOS. También puede pasarse la ruta como argumento de línea de comandos.
-
----
 
 ## Limitaciones conocidas
 
@@ -185,9 +121,3 @@ producir un ejecutable real. Puntos a tener en cuenta:
 
 Estas limitaciones son oportunidades naturales de mejora si se quiere extender
 el proyecto.
-
----
-
-## Autor
-
-Sebastián Duarte — Proyecto académico de Compiladores / Lenguajes y Autómatas.
