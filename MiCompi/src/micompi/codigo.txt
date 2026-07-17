@@ -1,0 +1,24 @@
+func main () {
+    var x int
+    var z int
+    var y float64
+    var mensaje string
+
+    x = 8+(5*5+2)-10*z
+    y = 3.5 + 10
+    z = x+8
+    mensaje = "Iniciando..."
+
+    if y > x {
+        fmt.Println ("Condicion compuesta verdadera")
+    } else {
+        fmt.Println ("Condicion compuesta falsa")
+    }
+
+    z = x + 8
+
+    for x < 5 {       
+        x = x + 1
+    }
+    fmt.Println ("Programa finalizado.")
+}

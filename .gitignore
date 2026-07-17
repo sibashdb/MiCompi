@@ -1,0 +1,23 @@
+# --- Compilados de Java ---
+*.class
+
+# --- Artefactos de build (NetBeans / Ant) ---
+build/
+dist/
+nbbuild/
+nbdist/
+
+# --- Configuración local / privada de NetBeans ---
+**/nbproject/private/
+
+# --- IDEs ---
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# --- Sistema operativo ---
+.DS_Store
+Thumbs.db
